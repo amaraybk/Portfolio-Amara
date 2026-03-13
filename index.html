@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+    :root {
+        --primary-blue: #2563eb;
+        --secondary-blue: #eff6ff;
+        --border-color: #e2e8f0;
+        --text-dark: #1e293b;
+        --accent-color: #38bdf8;
+    }
+
+    .table-container {
+        margin: 20px auto;
+        max-width: 900px;
+        overflow-x: auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        background: white;
+        padding: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: var(--text-dark);
+    }
+
+    /* En-têtes stylisés */
+    th {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        color: var(--primary-blue);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        padding: 15px;
+        border-bottom: 2px solid var(--primary-blue);
+        text-align: center;
+    }
+
+    td {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        transition: all 0.2s ease;
+    }
+
+    /* Effet de ligne au survol */
+    tr:hover td {
+        background-color: var(--secondary-blue);
+        color: var(--primary-blue);
+        transform: scale(1.005);
+    }
+
+    /* Colonne des matières */
+    td:first-child {
+        font-weight: 500;
+        border-right: 2px solid #f1f5f9;
+    }
+
+    /* Lignes en gras (Total et Options) */
+    .highlight {
+        background-color: #f8fafc;
+        font-weight: 700;
+        color: var(--primary-blue);
+    }
+
+    .total-row {
+        background: var(--primary-blue) !important;
+        color: white !important;
+    }
+
+    .total-row td {
+        border-bottom: none;
+    }
+
+    /* Badge pour les horaires */
+    .hour-badge {
+        display: inline-block;
+        padding: 4px 10px;
+        background: #e0f2fe;
+        color: #0369a1;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+        th, td { padding: 10px; font-size: 0.8rem; }
+    }
+</style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th style="border-top-left-radius: 8px;">Matières / Unités</th>
+                <th>1ère Année (S1 / S2)</th>
+                <th style="border-top-right-radius: 8px;">2nde Année</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anglais</td>
+                <td><span class="hour-badge">3h / 3h</span></td>
+                <td><span class="hour-badge">2h</span></td>
+            </tr>
+            <tr>
+                <td>Mathématiques pour l'informatique</td>
+                <td><span class="hour-badge">3h / 3h</span></td>
+                <td><span class="hour-badge">3h</span></td>
+            </tr>
+            <tr>
+                <td>Culture économique</td>
+                <td><span class="hour-badge">4h / 4h</span></td>
+                <td><span class="hour-badge">4h</span></td>
+            </tr>
+            <tr>
+                <td>CEJM Appliquée</td>
+                <td><span class="hour-badge">1h / 1h</span></td>
+                <td><span class="hour-badge">1h</span></td>
+            </tr>
+            <tr class="highlight">
+                <td>Support et services informatiques</td>
+                <td><span class="hour-badge" style="background:#dcfce7; color:#15803d;">10h / 4h</span></td>
+                <td><span class="hour-badge" style="background:#dcfce7; color:#15803d;">2h</span></td>
+            </tr>
+            <tr>
+                <td>Cybersécurité des services</td>
+                <td><span class="hour-badge">4h / 4h</span></td>
+                <td><span class="hour-badge">4h</span></td>
+            </tr>
+            <tr>
+                <td>Atelier de professionnalisation</td>
+                <td><span class="hour-badge">4h / 4h</span></td>
+                <td><span class="hour-badge">4h</span></td>
+            </tr>
+            <tr class="highlight">
+                <td>Option SISR (Réseaux)</td>
+                <td><span class="hour-badge" style="background:#fee2e2; color:#b91c1c;">0h / 6h</span></td>
+                <td><span class="hour-badge" style="background:#fee2e2; color:#b91c1c;">9h</span></td>
+            </tr>
+            <tr class="total-row">
+                <td style="border-bottom-left-radius: 8px;">TOTAL HEBDOMADAIRE</td>
+                <td>32h</td>
+                <td style="border-bottom-right-radius: 8px;">31h</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
