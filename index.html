@@ -1523,6 +1523,7 @@ function go(id) {
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   document.querySelectorAll('[data-p="' + id + '"]').forEach(l => l.classList.add('active'));
   document.getElementById('navLinks').classList.remove('open');
+  if (id) { location.hash = id; }
 }
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 function toggleDropdown(e, btn) {
@@ -1550,6 +1551,10 @@ document.querySelectorAll('.chrono-header').forEach(h => {
     document.querySelectorAll('.chrono-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
+});
+window.addEventListener('load', () => {
+  const id = location.hash ? location.hash.replace('#','') : '';
+  if (id) { go(id); }
 });
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
