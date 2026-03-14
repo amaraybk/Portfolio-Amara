@@ -250,10 +250,11 @@ b,strong{color:var(--primary);}
 .grille-cta p{margin:0;color:#334155;font-size:0.9rem;}
 .grille-cta .grille-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
 .grille-cta .grille-btn:hover{background:#222;}
-.legend-flash{animation:legendFlash 1.6s ease;}
+.legend-flash{animation:legendFlash 2.2s ease; border-radius:12px;}
 @keyframes legendFlash{
-  0%{background:rgba(3,105,161,0.12);}
-  100%{background:transparent;}
+  0%{background:rgba(3,105,161,0.28); box-shadow:0 0 0 2px rgba(3,105,161,0.45);}
+  35%{background:rgba(3,105,161,0.18); box-shadow:0 0 0 2px rgba(3,105,161,0.35);}
+  100%{background:transparent; box-shadow:none;}
 }
 
 /* ── CERTS ── */
