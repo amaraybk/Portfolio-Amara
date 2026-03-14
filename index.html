@@ -297,7 +297,7 @@ td{padding:9px 8px;border:1px solid var(--border);vertical-align:middle;backgrou
 td.td-realisation{font-weight:600;color:var(--text);line-height:1.45;}
 td.td-periode{color:#666;font-size:0.65rem;text-align:center;line-height:1.4;}
 td.td-check{text-align:center;vertical-align:middle;}
-.check-mark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary);border-radius:4px;color:white;font-size:0.85rem;font-weight:900;font-family:"Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;line-height:1;}
+.check-mark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary);border-radius:4px;color:white;font-size:0.85rem;font-weight:900;font-family:"Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;line-height:1;cursor:pointer;}
 .mobile-section-label{display:none;background:#e2e8f0;font-weight:700;font-size:0.8rem;padding:10px 14px;border-radius:8px 8px 0 0;color:var(--primary);text-transform:uppercase;letter-spacing:0.05em;margin-top:20px;border:1px solid #cbd5e0;}
 .mobile-card{display:none;border:1px solid var(--border);border-top:none;padding:14px;background:white;}
 .mobile-card-title{font-weight:700;font-size:0.88rem;color:var(--text);margin-bottom:4px;line-height:1.4;}
@@ -1579,11 +1579,27 @@ window.addEventListener('load', () => {
   const id = location.hash ? location.hash.replace('#','') : '';
   go(id || 'bts', false, true);
   window.scrollTo(0,0);
+  bindCheckLegend();
 });
 window.addEventListener('popstate', () => {
   const id = location.hash ? location.hash.replace('#','') : 'bts';
   go(id, false);
 });
+
+function bindCheckLegend() {
+  document.querySelectorAll('.check-mark').forEach(mark => {
+    mark.addEventListener('click', (e) => {
+      const td = e.target.closest('td');
+      if (!td) return;
+      const tr = td.parentElement;
+      const cells = Array.from(tr.children);
+      const idx = cells.indexOf(td);
+      const map = { 2: 'C1', 3: 'C2', 4: 'C3', 5: 'C4', 6: 'C5', 7: 'C6' };
+      const code = map[idx];
+      if (code) { goToLegend(e, code); }
+    });
+  });
+}
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
