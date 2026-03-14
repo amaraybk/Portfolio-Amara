@@ -1547,8 +1547,9 @@ document.addEventListener('click', (e) => {
 });
 function goToLegend(e, code) {
   if (e) e.preventDefault();
+  const inferred = code || (e && e.target ? e.target.textContent.trim() : '');
   go('grille', true, false);
-  const target = document.getElementById('legend-' + String(code || '').toLowerCase());
+  const target = document.getElementById('legend-' + String(inferred || '').toLowerCase());
   if (target) {
     target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     document.querySelectorAll('[id^=\"legend-\"]').forEach(el => el.classList.remove('legend-focus'));
@@ -1590,6 +1591,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 </script>
 </body>
 </html>
+
+
 
 
 
