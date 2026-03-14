@@ -250,6 +250,11 @@ b,strong{color:var(--primary);}
 .grille-cta p{margin:0;color:#334155;font-size:0.9rem;}
 .grille-cta .grille-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
 .grille-cta .grille-btn:hover{background:#222;}
+.legend-flash{animation:legendFlash 1.6s ease;}
+@keyframes legendFlash{
+  0%{background:rgba(3,105,161,0.12);}
+  100%{background:transparent;}
+}
 
 /* ── CERTS ── */
 .certs-showcase{max-width:900px;margin:0 auto;padding:0 24px 20px;text-align:center;}
@@ -1308,81 +1313,81 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <div class="mobile-card">
         <div class="mobile-card-title">Projet GSB — VLAN, DHCP, DNS, VM, serveur messagerie, gestion des droits</div>
         <div class="mobile-card-periode">12/2026 &rarr; 07/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C4</a><a class="chip" href="#grille-legend">C5</a><a class="chip" href="#grille-legend">C6</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C4</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Création du Portfolio</div>
         <div class="mobile-card-periode">11/2024 &rarr; 07/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C3</a><a class="chip" href="#grille-legend">C6</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Mise en place d'une veille technologique (IA)</div>
         <div class="mobile-card-periode">2024 &rarr; 2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C6</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">TP Réseau (ex : Packet Tracer)</div>
         <div class="mobile-card-periode">10/2024 &rarr; 04/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Créer plusieurs VM</div>
         <div class="mobile-card-periode">2025 &rarr; 2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">TP : Active Directory, DNS, DHCP, gestion d'accès</div>
         <div class="mobile-card-periode">10/2025 &rarr; 12/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C5</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a></div>
     </div>
 
     <div class="mobile-section-label" style="margin-top:16px;">🏢 1ère année — Milieu professionnel</div>
     <div class="mobile-card">
         <div class="mobile-card-title">Maintenance et remise en état des postes clients</div>
         <div class="mobile-card-periode">05/2025 &rarr; 07/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C2</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C2</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Prise en charge des demandes via GLPI</div>
         <div class="mobile-card-periode">05/2025 &rarr; 07/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C2</a><a class="chip" href="#grille-legend">C5</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C2</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Installation et configuration système (Windows 11)</div>
         <div class="mobile-card-periode">06/2025 &rarr; 07/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C5</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Organisation des câbles du lycée</div>
         <div class="mobile-card-periode">07/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Rapport et inventaire du parc informatique</div>
         <div class="mobile-card-periode">05/2025 &rarr; 07/2025</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C2</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C2</a></div>
     </div>
 
     <div class="mobile-section-label" style="margin-top:16px;">🏢 2ème année — Milieu professionnel</div>
     <div class="mobile-card">
         <div class="mobile-card-title">Diagnostic et remplacement de composants (RAM, SSD)</div>
         <div class="mobile-card-periode">12/2025 &rarr; 02/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C2</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C2</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Support de proximité auprès du corps enseignant</div>
         <div class="mobile-card-periode">01/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C2</a><a class="chip" href="#grille-legend">C5</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C2</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Mise à jour de la documentation sur GLPI</div>
         <div class="mobile-card-periode">01/2026 &rarr; 02/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a><a class="chip" href="#grille-legend">C6</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Formater un disque dur système</div>
         <div class="mobile-card-periode">01/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend">C1</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a></div>
     </div>
 
     <!-- -- LÉGENDE -- -->
@@ -1539,6 +1544,18 @@ document.addEventListener('click', (e) => {
     if (!item.contains(e.target)) item.classList.remove('open');
   });
 });
+function goToLegend(e) {
+  if (e) e.preventDefault();
+  go('grille');
+  const legend = document.getElementById('grille-legend');
+  if (legend) {
+    legend.scrollIntoView({ behavior: 'smooth' });
+    legend.classList.remove('legend-flash');
+    void legend.offsetWidth;
+    legend.classList.add('legend-flash');
+  }
+  history.pushState({ page: 'grille-legend' }, '', '#grille-legend');
+}
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1557,11 +1574,33 @@ document.querySelectorAll('.chrono-header').forEach(h => {
 });
 window.addEventListener('load', () => {
   const id = location.hash ? location.hash.replace('#','') : '';
-  if (id) { go(id, false); }
+  if (id === 'grille-legend') {
+    go('grille', false);
+    const legend = document.getElementById('grille-legend');
+    if (legend) {
+      legend.scrollIntoView({ behavior: 'smooth' });
+      legend.classList.remove('legend-flash');
+      void legend.offsetWidth;
+      legend.classList.add('legend-flash');
+    }
+  } else if (id) {
+    go(id, false);
+  }
 });
 window.addEventListener('popstate', () => {
   const id = location.hash ? location.hash.replace('#','') : 'bts';
-  go(id, false);
+  if (id === 'grille-legend') {
+    go('grille', false);
+    const legend = document.getElementById('grille-legend');
+    if (legend) {
+      legend.scrollIntoView({ behavior: 'smooth' });
+      legend.classList.remove('legend-flash');
+      void legend.offsetWidth;
+      legend.classList.add('legend-flash');
+    }
+  } else {
+    go(id, false);
+  }
 });
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
@@ -1572,6 +1611,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 </script>
 </body>
 </html>
+
 
 
 
