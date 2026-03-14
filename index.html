@@ -253,7 +253,7 @@ b,strong{color:var(--primary);}
 .info-value a:hover{text-decoration:underline;}
 .option-boxes{display:flex;gap:16px;}
 .opt{display:flex;align-items:center;gap:5px;font-size:0.82rem;}
-.checkbox{width:16px;height:16px;border:2px solid var(--primary);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;flex-shrink:0;}
+.checkbox{width:16px;height:16px;border:2px solid var(--primary);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;flex-shrink:0;font-family:"Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;line-height:1;}
 .checkbox.checked{background:var(--primary);color:white;}
 .g-dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--primary);color:white;text-decoration:none;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border-radius:6px;margin-bottom:28px;transition:var(--transition);}
 .g-dl-btn:hover{background:#333;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
@@ -271,7 +271,7 @@ td{padding:9px 8px;border:1px solid var(--border);vertical-align:middle;backgrou
 td.td-realisation{font-weight:600;color:var(--text);line-height:1.45;}
 td.td-periode{color:#666;font-size:0.65rem;text-align:center;line-height:1.4;}
 td.td-check{text-align:center;vertical-align:middle;}
-.check-mark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary);border-radius:4px;color:white;font-size:0.85rem;font-weight:900;}
+.check-mark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary);border-radius:4px;color:white;font-size:0.85rem;font-weight:900;font-family:"Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;line-height:1;}
 .mobile-section-label{display:none;background:#e2e8f0;font-weight:700;font-size:0.8rem;padding:10px 14px;border-radius:8px 8px 0 0;color:var(--primary);text-transform:uppercase;letter-spacing:0.05em;margin-top:20px;border:1px solid #cbd5e0;}
 .mobile-card{display:none;border:1px solid var(--border);border-top:none;padding:14px;background:white;}
 .mobile-card-title{font-weight:700;font-size:0.88rem;color:var(--text);margin-bottom:4px;line-height:1.4;}
@@ -291,6 +291,13 @@ td.td-check{text-align:center;vertical-align:middle;}
 .projet-missions li:last-child{border-bottom:none;}
 .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 .ttag{font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:4px;background:var(--light-gray);border:1px solid var(--border);color:var(--text);}
+.projet-pdf{margin-top:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
+.projet-pdf iframe{width:100%;height:540px;border:0;display:block;}
+.pdf-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:12px 14px;background:#f8fafc;border-top:1px solid var(--border);}
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;}
+.pdf-btn:hover{background:#222;}
+.pdf-btn-ghost{background:#fff;color:var(--primary);border:1px solid var(--primary);}
+.pdf-btn-ghost:hover{background:#f1f5f9;}
 
 /* ── FOOTER ── */
 footer{background:var(--footer-bg);color:white;padding:36px 32px;text-align:center;}
@@ -336,6 +343,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   .certs-grid{grid-template-columns:1fr;}
   .cert-logo{max-height:72px;}
   .cert-preview{padding:10px;}
+  .projet-pdf iframe{height:420px;}
   .flux-title{font-size:1.2rem;}
   .tab-btn{padding:12px 16px;font-size:0.78rem;}
   .articles-list{gap:12px;}
@@ -349,6 +357,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   .stage-map iframe{height:200px;}
   .tab-btn{padding:10px 12px;font-size:0.74rem;}
   .cert-download{font-size:0.72rem;padding:9px 14px;}
+  .projet-pdf iframe{height:320px;}
 }
 </style>
 </head>
@@ -969,6 +978,8 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         color: white;
         font-size: 0.85rem;
         font-weight: 900;
+        font-family: "Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;
+        line-height: 1;
     }
 
     /* -- MOBILE CARDS -- */
@@ -1391,6 +1402,13 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
           <li><div class="dot"></div><span>Planification et travail en mode <b>projet collaboratif</b></span></li>
         </ul>
         <div class="tech-tags"><span class="ttag">VLAN</span><span class="ttag">DHCP</span><span class="ttag">DNS</span><span class="ttag">Active Directory</span><span class="ttag">Virtualisation</span><span class="ttag">Messagerie</span></div>
+        <div class="projet-pdf" aria-label="Rapport PDF du projet GSB">
+          <iframe src="pdf/GSB-Organisation.pdf" title="GSB - Organisation (PDF)"></iframe>
+          <div class="pdf-actions">
+            <a class="pdf-btn" href="https://drive.google.com/uc?export=download&id=1zHPZrX_X-IWT8XBDIj-R9078jXR1VIjr" download>Télécharger le PDF (10 pages)</a>
+            <a class="pdf-btn pdf-btn-ghost" href="pdf/GSB-Organisation.pdf" target="_blank" rel="noopener">Ouvrir en plein écran</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="projet-card">
