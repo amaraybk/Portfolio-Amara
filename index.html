@@ -232,7 +232,11 @@ b,strong{color:var(--primary);}
 .read-more{text-decoration:none;color:var(--primary);font-weight:700;font-size:0.82rem;border-bottom:1px solid var(--primary);}
 .read-more:hover{color:#555;border-color:#555;}
 .flux-container{max-width:900px;margin:0 auto;}
-.flux-title{font-size:1.5rem;border-bottom:2px solid var(--primary);padding-bottom:10px;margin:40px 0 30px;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
+.flux-title{font-size:1.5rem;border-bottom:2px solid var(--primary);padding-bottom:10px;margin:40px 0 18px;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
+.veille-controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;}
+.veille-input,.veille-select{border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:0.9rem;outline:none;}
+.veille-input{flex:1 1 260px;}
+.veille-select{flex:0 0 200px;background:white;}
 .flux-meta{display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:700;text-transform:uppercase;margin-bottom:10px;color:#666;}
 .flux-summary{font-size:0.9rem;color:#4b5563;margin-bottom:15px;line-height:1.6;}
 .flux-footer{margin-top:60px;padding:20px 0;text-align:center;font-size:0.8rem;border-top:1px solid var(--border);color:#999;}
@@ -574,6 +578,13 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   
   <div class="flux-container">
     <h2 class="flux-title">Flux de Veille : Septembre 2024 — Mars 2026</h2>
+    <div class="veille-controls">
+      <input id="veille-search" class="veille-input" type="search" placeholder="Rechercher un article (mot-clé, source...)">
+      <select id="veille-sort" class="veille-select">
+        <option value="desc">Trier par date (récent → ancien)</option>
+        <option value="asc">Trier par date (ancien → récent)</option>
+      </select>
+    </div>
     <div class="articles-list">
       <div class="article-item">
         <div class="flux-meta">11 Octobre 2024 <span class="source-label">Le Monde</span></div>
@@ -780,7 +791,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 
       <div class="article-item" style="border-left:5px solid #2563eb;">
         <div class="flux-meta">Mars 2026 <span class="source-label">Actualité</span></div>
-        <h3>Synthèse de Veille : L'IA au cÅ“ur du transport</h3>
+        <h3>Synthèse de Veille : L'IA au cœur du transport</h3>
         <p class="flux-summary">Bilan de la veille montrant la transition du matériel (voiture) vers le logiciel (système d'IA) comme valeur ajoutée principale.</p>
         <div class="link-wrapper"><span class="read-more">Clôture de la période de veille</span></div>
       </div>
@@ -1135,7 +1146,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                 <tr class="section-row"><td colspan="8">📚 Réalisations en cours de formation</td></tr>
 
                 <tr>
-                    <td class="td-realisation">Projet GSB — création VLAN, planification des tâches, travail en groupe, DHCP, DNS, VM Client/Serveur, serveur messagerie, gestion des droits d'accès</td>
+                    <td class="td-realisation"><a href="#projets" onclick="goToProject('gsb');return false;">Projet GSB</a> — création VLAN, planification des tâches, travail en groupe, DHCP, DNS, VM Client/Serveur, serveur messagerie, gestion des droits d'accès</td>
                     <td class="td-periode">12/2026<br>&rarr; 07/2026</td>
                     <td class="td-check"><span class="check-mark">&#10003;</span></td>
                     <td class="td-check"></td>
@@ -1433,7 +1444,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 <div class="page" id="page-projets">
   <div class="hero"><h1>Projets</h1></div>
   <div class="content">
-    <div class="projet-card">
+    <div class="projet-card" id="projet-gsb">
       <div class="projet-header"><h3>Projet GSB</h3><p>Projet réseau complet — BTS SIO 2026</p></div>
       <div class="projet-body">
         <p>Dans le cadre du BTS SIO, le Projet GSB consiste à concevoir et déployer une infrastructure réseau complète pour une organisation fictive.</p>
@@ -1558,6 +1569,13 @@ function goToLegend(e, code) {
     target.classList.add('legend-focus');
   }
 }
+function goToProject(id) {
+  go('projets', true, false);
+  const target = document.getElementById('projet-' + id);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1574,6 +1592,51 @@ document.querySelectorAll('.chrono-header').forEach(h => {
     if (!isOpen) item.classList.add('open');
   });
 });
+// Veille: search + sort
+const veilleSearch = document.getElementById('veille-search');
+const veilleSort = document.getElementById('veille-sort');
+const veilleList = document.querySelector('.articles-list');
+const veilleItems = veilleList ? Array.from(veilleList.children) : [];
+function parseFrenchDate(text) {
+  if (!text) return 0;
+  const months = {
+    'janvier':0,'février':1,'fevrier':1,'mars':2,'avril':3,'mai':4,'juin':5,
+    'juillet':6,'août':7,'aout':7,'septembre':8,'octobre':9,'novembre':10,'décembre':11,'decembre':11
+  };
+  const clean = text.toLowerCase().replace(',', ' ').replace(/\s+/g,' ').trim();
+  const full = clean.match(/(\d{1,2})\s+([a-zéûôàîïùç]+)\s+(\d{4})/i);
+  if (full && months.hasOwnProperty(full[2])) {
+    return new Date(parseInt(full[3],10), months[full[2]], parseInt(full[1],10)).getTime();
+  }
+  const short = clean.match(/([a-zéûôàîïùç]+)\s+(\d{4})/i);
+  if (short && months.hasOwnProperty(short[1])) {
+    return new Date(parseInt(short[2],10), months[short[1]], 1).getTime();
+  }
+  return 0;
+}
+function updateVeille() {
+  if (!veilleList) return;
+  const q = (veilleSearch ? veilleSearch.value.trim().toLowerCase() : '');
+  const dir = veilleSort ? veilleSort.value : 'desc';
+  const filtered = veilleItems.filter(item => {
+    const text = item.textContent.toLowerCase();
+    return !q || text.includes(q);
+  });
+  filtered.sort((a,b) => {
+    const metaA = a.querySelector('.flux-meta');
+    const metaB = b.querySelector('.flux-meta');
+    const ta = metaA ? (metaA.childNodes[0]?.textContent || metaA.textContent) : '';
+    const tb = metaB ? (metaB.childNodes[0]?.textContent || metaB.textContent) : '';
+    const da = parseFrenchDate(ta);
+    const db = parseFrenchDate(tb);
+    return dir === 'asc' ? da - db : db - da;
+  });
+  veilleList.innerHTML = '';
+  filtered.forEach(it => veilleList.appendChild(it));
+}
+if (veilleSearch) veilleSearch.addEventListener('input', updateVeille);
+if (veilleSort) veilleSort.addEventListener('change', updateVeille);
+if (veilleList) updateVeille();
 window.addEventListener('load', () => {
   if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
   const id = location.hash ? location.hash.replace('#','') : '';
