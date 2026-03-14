@@ -1516,14 +1516,16 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 </footer>
 
 <script>
-function go(id) {
+function go(id, push = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + id);
   if (el) { el.classList.add('active'); window.scrollTo(0,0); }
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   document.querySelectorAll('[data-p="' + id + '"]').forEach(l => l.classList.add('active'));
   document.getElementById('navLinks').classList.remove('open');
-  if (id) { location.hash = id; }
+  if (id && push) {
+    history.pushState({ page: id }, '', '#' + id);
+  }
 }
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 function toggleDropdown(e, btn) {
@@ -1554,7 +1556,11 @@ document.querySelectorAll('.chrono-header').forEach(h => {
 });
 window.addEventListener('load', () => {
   const id = location.hash ? location.hash.replace('#','') : '';
-  if (id) { go(id); }
+  if (id) { go(id, false); }
+});
+window.addEventListener('popstate', () => {
+  const id = location.hash ? location.hash.replace('#','') : 'bts';
+  go(id, false);
 });
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
