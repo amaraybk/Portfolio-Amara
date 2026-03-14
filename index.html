@@ -250,9 +250,9 @@ b,strong{color:var(--primary);}
 .grille-cta p{margin:0;color:#334155;font-size:0.9rem;}
 .grille-cta .grille-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
 .grille-cta .grille-btn:hover{background:#222;}
-.legend-flash{animation:legendFlash 2.2s ease; border-radius:12px;}
-@keyframes legendFlash{
-  0%{background:rgba(3,105,161,0.28); box-shadow:0 0 0 2px rgba(3,105,161,0.45);}
+.legend-focus{animation:legendPulse 2.2s ease; border-radius:10px;}
+@keyframes legendPulse{
+  0%{background:rgba(3,105,161,0.3); box-shadow:0 0 0 2px rgba(3,105,161,0.5);}
   35%{background:rgba(3,105,161,0.18); box-shadow:0 0 0 2px rgba(3,105,161,0.35);}
   100%{background:transparent; box-shadow:none;}
 }
@@ -303,7 +303,7 @@ td.td-check{text-align:center;vertical-align:middle;}
 .mobile-card-title{font-weight:700;font-size:0.88rem;color:var(--text);margin-bottom:4px;line-height:1.4;}
 .mobile-card-periode{font-size:0.75rem;color:#888;margin-bottom:10px;}
 .mobile-chips{display:flex;flex-wrap:wrap;gap:6px;}
-.chip{font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--primary);color:white;text-decoration:none;}
+.chip{font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--primary);color:white;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;}
 .chip:hover{opacity:0.9;}
 
 /* ── PROJETS ── */
@@ -1395,27 +1395,27 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <div id="grille-legend" style="margin-top:28px; border-top:2px solid #e2e8f0; padding-top:20px;">
         <div style="font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--primary); margin-bottom:14px;">Détail des compétences</div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:10px;">
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c1" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C1 — Gérer le patrimoine informatique</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Recenser les ressources · Exploiter les référentiels · Gérer habilitations · Assurer la continuité · Sauvegardes</div>
             </div>
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c2" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C2 — Répondre aux incidents et demandes</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Collecter et orienter · Services réseau / système / applicatifs · Traiter les demandes</div>
             </div>
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c3" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C3 — Développer la présence en ligne</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Valoriser l'image · Référencer les services · Faire évoluer un site Web</div>
             </div>
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c4" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C4 — Travailler en mode projet</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Analyser objectifs · Planifier · Évaluer indicateurs et écarts</div>
             </div>
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c5" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C5 — Mettre à disposition un service</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Tests d'intégration · Déployer · Accompagner les utilisateurs</div>
             </div>
-            <div style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
+        <div id="legend-c6" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C6 — Organiser son développement professionnel</div>
                 <div style="font-size:0.72rem; color:#666; line-height:1.6;">Veille informationnelle · Identité professionnelle · Projet professionnel</div>
             </div>
@@ -1523,10 +1523,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 </footer>
 
 <script>
-function go(id, push = true) {
+function go(id, push = true, scrollTop = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + id);
-  if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+  if (el) { el.classList.add('active'); if (scrollTop) window.scrollTo(0,0); }
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   document.querySelectorAll('[data-p="' + id + '"]').forEach(l => l.classList.add('active'));
   document.getElementById('navLinks').classList.remove('open');
@@ -1545,17 +1545,20 @@ document.addEventListener('click', (e) => {
     if (!item.contains(e.target)) item.classList.remove('open');
   });
 });
-function goToLegend(e) {
+function goToLegend(e, code) {
   if (e) e.preventDefault();
-  go('grille');
-  const legend = document.getElementById('grille-legend');
-  if (legend) {
-    legend.scrollIntoView({ behavior: 'smooth' });
-    legend.classList.remove('legend-flash');
-    void legend.offsetWidth;
-    legend.classList.add('legend-flash');
+  go('grille', true, false);
+  const target = document.getElementById('legend-' + String(code || '').toLowerCase());
+  if (target) {
+    const rect = target.getBoundingClientRect();
+    if (Math.abs(rect.top) > 120) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    document.querySelectorAll('[id^=\"legend-\"]').forEach(el => el.classList.remove('legend-focus'));
+    target.classList.remove('legend-focus');
+    void target.offsetWidth;
+    target.classList.add('legend-focus');
   }
-  history.pushState({ page: 'grille-legend' }, '', '#grille-legend');
 }
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1575,33 +1578,13 @@ document.querySelectorAll('.chrono-header').forEach(h => {
 });
 window.addEventListener('load', () => {
   const id = location.hash ? location.hash.replace('#','') : '';
-  if (id === 'grille-legend') {
-    go('grille', false);
-    const legend = document.getElementById('grille-legend');
-    if (legend) {
-      legend.scrollIntoView({ behavior: 'smooth' });
-      legend.classList.remove('legend-flash');
-      void legend.offsetWidth;
-      legend.classList.add('legend-flash');
-    }
-  } else if (id) {
+  if (id) {
     go(id, false);
   }
 });
 window.addEventListener('popstate', () => {
   const id = location.hash ? location.hash.replace('#','') : 'bts';
-  if (id === 'grille-legend') {
-    go('grille', false);
-    const legend = document.getElementById('grille-legend');
-    if (legend) {
-      legend.scrollIntoView({ behavior: 'smooth' });
-      legend.classList.remove('legend-flash');
-      void legend.offsetWidth;
-      legend.classList.add('legend-flash');
-    }
-  } else {
-    go(id, false);
-  }
+  go(id, false);
 });
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
