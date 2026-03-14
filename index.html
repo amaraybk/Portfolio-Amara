@@ -28,6 +28,8 @@ nav{position:sticky;top:0;z-index:500;background:white;border-bottom:1px solid #
 .nav-brand{font-size:0.88rem;font-weight:600;color:var(--primary);white-space:nowrap;}
 .nav-links{display:flex;flex-wrap:wrap;gap:4px;overflow:visible;margin-left:auto;}
 .nav-link{padding:0 12px;height:40px;display:flex;align-items:center;font-size:0.78rem;font-weight:500;color:#555;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:var(--transition);white-space:nowrap;border-top:none;border-left:none;border-right:none;background:none;}
+.sub-link{padding-left:28px;font-size:0.74rem;}
+.mobile-only{display:none;}
 .nav-link:hover{color:var(--primary);}
 .nav-link.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:700;}
 .nav-item{position:relative;}
@@ -318,6 +320,8 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   nav{padding:6px 10px;}
   .nav-links{display:none;width:100%;margin-left:0;justify-content:flex-start;flex-direction:column;gap:2px;padding:8px 0;}
   .nav-link{height:36px;font-size:0.74rem;padding:0 10px;}
+  .mobile-only{display:flex;}
+  .sub-link{padding-left:22px;font-size:0.72rem;}
   .nav-links.open{display:flex;position:static;border-bottom:none;}
   .hamburger{display:flex;}
   .hero{padding:36px 16px;}
@@ -388,6 +392,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <button onclick="go('grille')">Grille de compétences</button>
       </div>
     </div>
+    <button class="nav-link sub-link mobile-only" onclick="go('grille')">Grille de compétences</button>
     <button class="nav-link" onclick="go('projets')" data-p="projets">Projets</button>
   </div>
   <div class="hamburger" id="ham" onclick="toggleNav()">
