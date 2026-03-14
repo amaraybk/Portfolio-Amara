@@ -1550,10 +1550,7 @@ function goToLegend(e, code) {
   go('grille', true, false);
   const target = document.getElementById('legend-' + String(code || '').toLowerCase());
   if (target) {
-    const rect = target.getBoundingClientRect();
-    if (Math.abs(rect.top) > 120) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     document.querySelectorAll('[id^=\"legend-\"]').forEach(el => el.classList.remove('legend-focus'));
     target.classList.remove('legend-focus');
     void target.offsetWidth;
@@ -1578,9 +1575,7 @@ document.querySelectorAll('.chrono-header').forEach(h => {
 });
 window.addEventListener('load', () => {
   const id = location.hash ? location.hash.replace('#','') : '';
-  if (id) {
-    go(id, false);
-  }
+  go(id || 'bts', false, true);
 });
 window.addEventListener('popstate', () => {
   const id = location.hash ? location.hash.replace('#','') : 'bts';
