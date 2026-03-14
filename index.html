@@ -1575,8 +1575,10 @@ document.querySelectorAll('.chrono-header').forEach(h => {
   });
 });
 window.addEventListener('load', () => {
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
   const id = location.hash ? location.hash.replace('#','') : '';
   go(id || 'bts', false, true);
+  window.scrollTo(0,0);
 });
 window.addEventListener('popstate', () => {
   const id = location.hash ? location.hash.replace('#','') : 'bts';
