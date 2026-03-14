@@ -230,6 +230,10 @@ b,strong{color:var(--primary);}
 .skill-icon{color:var(--primary);flex-shrink:0;transition:color 0.2s;}
 .skill:hover .skill-icon{color:var(--accent-blue);}
 .skill-name{font-size:1.1rem;font-weight:600;color:var(--text);white-space:nowrap;}
+.grille-cta{max-width:860px;margin:18px auto 0;background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 6px 16px rgba(0,0,0,0.05);}
+.grille-cta p{margin:0;color:#334155;font-size:0.9rem;}
+.grille-cta .grille-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+.grille-cta .grille-btn:hover{background:#222;}
 
 /* ── CERTS ── */
 .certs-showcase{max-width:900px;margin:0 auto;padding:0 24px 20px;text-align:center;}
@@ -341,6 +345,8 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   .tl-card{box-shadow:0 3px 10px rgba(0,0,0,0.08);}
   .skill-name{font-size:0.88rem;white-space:normal;}
   .skill{padding:12px 14px;}
+  .grille-cta{flex-direction:column;align-items:flex-start;}
+  .grille-cta .grille-btn{width:100%;justify-content:center;}
   .certs-title{font-size:1.5rem;}
   .certs-grid{grid-template-columns:1fr;}
   .cert-logo{max-height:72px;}
@@ -755,6 +761,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 <!-- PAGE : COMPÉTENCES -->
 <div class="page" id="page-competences">
   <div class="hero"><h1>Mes compétences</h1></div>
+  <div class="grille-cta">
+    <p>Besoin du détail complet ? Accédez à la grille de compétences E5.</p>
+    <button class="grille-btn" onclick="go('grille')">Voir la grille</button>
+  </div>
   <div style="padding:40px 24px 20px;">
     <div class="skill-category">
       <div class="category-label">Bureautique &amp; Création</div>
