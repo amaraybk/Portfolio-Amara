@@ -317,8 +317,6 @@ b,strong{color:var(--primary);}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;}
 .photo-grid img{width:100%;height:200px;object-fit:cover;border-radius:8px;transition:var(--transition);cursor:zoom-in;}
 .photo-grid img:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
-.methodo-images{display:flex;flex-direction:column;gap:18px;margin-top:16px;align-items:center;}
-.methodo-images img{width:100%;max-width:980px;height:auto;max-height:620px;object-fit:contain;border-radius:10px;border:1px solid var(--border);background:var(--bg);cursor:default;}
 
 /* -- LIGHTBOX -- */
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;align-items:center;justify-content:center;}
@@ -471,7 +469,6 @@ td.td-check{text-align:center;vertical-align:middle;}
 .ttag{font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:4px;background:var(--light-gray);border:1px solid var(--border);color:var(--text);}
 .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
 .project-tags span{display:inline-block;background:#1118271a;color:#334155;border-radius:999px;padding:4px 10px;font-weight:600;font-size:0.75rem;border:1px solid var(--border);}
-.mini-title{margin-top:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text);}
 .tp-section{margin-top:8px;}
 .tp-card{border:1px dashed var(--border);border-radius:12px;padding:16px 20px;background:var(--light-gray);}
 .tp-card h4{margin:0 0 6px;font-size:1rem;}
@@ -490,9 +487,6 @@ td.td-check{text-align:center;vertical-align:middle;}
 .tp-doc-actions{display:flex;gap:8px;flex-wrap:wrap;}
 .tp-keywords{margin-top:12px;font-size:0.85rem;color:#6b7280;}
 .tp-keywords span{display:inline-block;background:#1118271a;color:#334155;border-radius:999px;padding:4px 10px;margin:6px 6px 0 0;font-weight:600;}
-.methodo-card{background:var(--light-gray);border:1px solid var(--border);border-radius:12px;padding:18px;margin-top:16px;}
-.methodo-card h3{margin:0 0 8px;font-size:1rem;color:var(--primary);}
-.methodo-card ul{margin:8px 0 0 18px;}
 .projet-pdf{margin-top:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
 .projet-pdf iframe{width:100%;height:540px;border:0;display:block;}
 .pdf-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:12px 14px;background:#f8fafc;border-top:1px solid var(--border);}
@@ -537,7 +531,6 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   .hours-table td{font-size:0.78rem;padding:8px 10px;}
   .options-grid,.stage-intro{grid-template-columns:1fr;}
   .photo-grid{grid-template-columns:1fr;}
-  .methodo-images img{max-height:420px;max-width:100%;}
   .table-scroll{display:none;}
   .mobile-section-label,.mobile-card{display:block;}
   .info-grid{grid-template-columns:1fr;}
@@ -673,7 +666,6 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 [data-theme="dark"] .tp-doc,
 [data-theme="dark"] .tp-doc-header{background:#0b1220 !important;border-color:#1f2937 !important;}
 [data-theme="dark"] .tp-keywords span{background:#111827 !important;color:#e5e7eb !important;}
-[data-theme="dark"] .methodo-card{background:#0b1220 !important;border-color:#1f2937 !important;}
 [data-theme="dark"] .tp-note{color:#e5e7eb !important;}
 </style>
 </head>
@@ -822,10 +814,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 <div class="page" id="page-veille">
   <div class="hero"><h1>Veille technologique</h1><p>L'IA et les Véhicules Autonomes : enjeux et fonctionnement</p></div>
   <div class="tab-nav">
-    <button class="tab-btn active" data-target="def"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M10 3a7 7 0 015.65 11.13l4.11 4.11-1.41 1.41-4.11-4.11A7 7 0 1110 3zm0 2a5 5 0 100 10 5 5 0 000-10z"/></svg>Définition</button>
+    <button class="tab-btn active" data-target="def">Définition</button>
     <button class="tab-btn" data-target="chrono"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M13 3H11V11H3V13H11V21H13V13H21V11H13V3Z"/></svg>Chronologie</button>
     <button class="tab-btn" data-target="tech"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.35 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.97 19.05,5.05L16.56,6.05C16.04,5.65 15.48,5.32 14.87,5.07L14.49,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.51,2.42L9.13,5.07C8.52,5.32 7.96,5.65 7.44,6.05L4.95,5.05C4.73,4.97 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.35 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.95C7.96,18.35 8.52,18.68 9.13,18.93L9.51,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.49,21.58L14.87,18.93C15.48,18.68 16.04,18.35 16.56,17.95L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>Fonctionnement</button>
-    <button class="tab-btn" data-target="droit"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v1h5a1 1 0 010 2h-1.1l2.7 5.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0l-3.5-4.6a1 1 0 01-.1-1L13.6 6H10.4l1.8 3.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0L3.5 10.4a1 1 0 01-.1-1L6.1 6H5a1 1 0 010-2h5V3a1 1 0 011-1zm-4.3 8.5L6 7.2 4.3 10.5H7.7zm9.3 0l-1.7-3.3-1.7 3.3h3.4zM3 20h18a1 1 0 010 2H3a1 1 0 010-2z"/></svg>Droit &amp; Responsabilité</button>
+    <button class="tab-btn" data-target="droit">Droit &amp; Responsabilité</button>
     
   </div>
 
@@ -845,7 +837,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   <div class="tab-panel" id="panel-tech"><div class="wrapper"><div class="section">
     <h2 class="v-section-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.35 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.97 19.05,5.05L16.56,6.05C16.04,5.65 15.48,5.32 14.87,5.07L14.49,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.51,2.42L9.13,5.07C8.52,5.32 7.96,5.65 7.44,6.05L4.95,5.05C4.73,4.97 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.35 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.95C7.96,18.35 8.52,18.68 9.13,18.93L9.51,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.49,21.58L14.87,18.93C15.48,18.68 16.04,18.35 16.56,17.95L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>3. Fonctionnement Technique Approfondi</h2>
     <div class="grid-tech">
-      <div class="tech-card"><h3><svg class="icon" viewBox="0 0 24 24"><path d="M12 5c-5 0-9 4.5-10 7 1 2.5 5 7 10 7s9-4.5 10-7c-1-2.5-5-7-10-7zm0 11a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"/></svg>La Perception</h3><p>Fusion de données : le <b>Lidar</b> scanne en 3D par impulsions laser, les <b>caméras HD</b> analysent les textures (feux, signalisation) et les <b>radars</b> mesurent les vitesses par effet Doppler.</p></div>
+      <div class="tech-card"><h3>La Perception</h3><p>Fusion de données : le <b>Lidar</b> scanne en 3D par impulsions laser, les <b>caméras HD</b> analysent les textures (feux, signalisation) et les <b>radars</b> mesurent les vitesses par effet Doppler.</p></div>
       <div class="tech-card"><h3>Le Cerveau (IA)</h3><p>Les réseaux de neurones <b>(CNN)</b> traitent les flux en millisecondes. L'algorithme effectue de la <b>segmentation sémantique</b> pour isoler chaque objet et prédire sa trajectoire future.</p></div>
       <div class="tech-card"><h3>L'Action (Bus CAN)</h3><p>L'IA transmet ses ordres via le réseau interne du véhicule <b>(bus CAN)</b>. Les calculateurs pilotent alors les actionneurs électriques pour le freinage et la direction sans délai.</p></div>
     </div>
@@ -853,7 +845,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   </div></div></div>
 
   <div class="tab-panel" id="panel-droit"><div class="wrapper"><div class="section">
-    <h2 class="v-section-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v1h5a1 1 0 010 2h-1.1l2.7 5.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0l-3.5-4.6a1 1 0 01-.1-1L13.6 6H10.4l1.8 3.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0L3.5 10.4a1 1 0 01-.1-1L6.1 6H5a1 1 0 010-2h5V3a1 1 0 011-1zm-4.3 8.5L6 7.2 4.3 10.5H7.7zm9.3 0l-1.7-3.3-1.7 3.3h3.4zM3 20h18a1 1 0 010 2H3a1 1 0 010-2z"/></svg>4. Droit et Niveaux de Responsabilité</h2>
+    <h2 class="v-section-title">4. Droit et Niveaux de Responsabilité</h2>
     <div class="level-box"><div class="level-header"><span>Niveau 1 &amp; 2 : Assistance</span><span class="who-drives">Humain Responsable</span></div><div class="level-body">Le conducteur doit rester attentif. L'ordinateur aide sur la vitesse ou le maintien de voie.</div></div>
     <div class="level-box"><div class="level-header"><span>Niveau 3 : Le Pivot Juridique</span><span class="who-drives">Responsabilité Partagée</span></div><div class="level-body"><b>Tournant majeur :</b> Sur autoroute, le conducteur peut lâcher le volant. En cas d'accident imputable au système, le <b>constructeur</b> peut être tenu responsable.</div></div>
     <div class="level-box"><div class="level-header"><span>Niveau 4 &amp; 5 : Robotisation Totale</span><span class="who-drives">Robot Responsable</span></div><div class="level-body">Le véhicule gère toutes les situations. À terme, pédales et volant disparaissent totalement.</div></div>
@@ -1431,7 +1423,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                 <tr class="section-row"><td colspan="8">Réalisations en cours de formation</td></tr>
 
                 <tr>
-                    <td class="td-realisation"><a href="#projets" onclick="goToProject('gsb');return false;">Projet GSB</a> — création VLAN, planification des tches, travail en groupe, DHCP, DNS, VM Client/Serveur, serveur messagerie, gestion des droits d'accès</td>
+                    <td class="td-realisation"><a href="#projets" onclick="goToProject('gsb');return false;">Projet GSB</a> — création VLAN, planification des tâches, travail en groupe, DHCP, DNS, VM Client/Serveur, serveur messagerie, gestion des droits d'accès</td>
                     <td class="td-periode">12/2026<br>&rarr; 07/2026</td>
                     <td class="td-check"><span class="check-mark">&#10003;</span></td>
                     <td class="td-check"></td>
@@ -1533,7 +1525,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                 </tr>
 
                 <tr>
-                    <td class="td-realisation">Organisation des cbles du lycée</td>
+                    <td class="td-realisation">Organisation des câbles du lycée</td>
                     <td class="td-periode">07/2025</td>
                     <td class="td-check"><span class="check-mark">&#10003;</span></td>
                     <td class="td-check"></td>
@@ -1655,7 +1647,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C5</a></div>
     </div>
     <div class="mobile-card">
-        <div class="mobile-card-title">Organisation des cbles du lycée</div>
+        <div class="mobile-card-title">Organisation des câbles du lycée</div>
         <div class="mobile-card-periode">07/2025</div>
         <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C1</a></div>
     </div>
@@ -1741,8 +1733,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
           <li><div class="dot"></div><span>Gestion des <b>droits d'accès</b> via Active Directory</span></li>
           <li><div class="dot"></div><span>Planification et travail en mode <b>projet collaboratif</b></span></li>
         </ul>
-        <div class="mini-title">Mots-clés</div>
-        <div class="project-tags"><span>VLAN</span><span>DHCP</span><span>DNS</span><span>Active Directory</span><span>Virtualisation</span><span>Messagerie</span></div>
+        <div class="project-tags"><span class="ttag">VLAN</span><span class="ttag">DHCP</span><span class="ttag">DNS</span><span class="ttag">Active Directory</span><span class="ttag">Virtualisation</span><span class="ttag">Messagerie</span></div>
         <div class="projet-pdf" aria-label="Rapport PDF du projet GSB">
           <iframe src="pdf/GSB-Organisation.pdf" title="GSB - Organisation (PDF)"></iframe>
           <div class="pdf-actions">
@@ -1769,8 +1760,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <p>L’objectif est de mettre en place une infrastructure réseau fonctionnelle en configurant les services essentiels (VLAN, DHCP, DNS, AD).</p>
         <p>L’exercice permet de comprendre comment segmenter un réseau, automatiser l’adressage et gérer les accès utilisateurs.</p>
         <p>Il développe aussi les compétences de déploiement serveur et de travail en mode projet.</p>
-        <div class="mini-title">Mots-clés</div>
-        <div class="project-tags">
+        <div class="tp-keywords">
           <span>AD DS</span><span>DNS</span><span>DHCP</span><span>GPO</span><span>NTFS</span><span>FSRM</span><span>DFS</span><span>Quotas</span><span>VMware</span><span>Windows Server 2019</span><span>Partages réseau</span><span>Sécurité</span><span>Haute disponibilité</span><span>Réplication</span><span>Domain Controller</span>
         </div>
         <div class="tp-actions" style="margin-top:14px;">
@@ -1779,62 +1769,16 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div class="tp-note">PDF consultables et téléchargeables.</div>
       </div>
     </div>
-    <div class="projet-card" id="projet-veille">
-      <div class="projet-header"><h3>Veille informatique</h3><p>IA dans l'automobile</p></div>
-      <div class="projet-body">
-        <p>J'ai choisi cette veille car l'IA dans l'automobile est un domaine en pleine évolution, mêlant innovation technologique et enjeux de sécurité. Elle montre comment l'IA transforme un secteur concret et accessible, tout en restant liée à l'informatique et aux réseaux.</p>
-        <div class="mini-title">Mots-clés utilisés</div>
-        <div class="project-tags">
-          <span>Google Alerte</span><span>IA</span><span>Automobile</span><span>Grok IA</span>
-        </div>
-        <div class="tp-actions" style="margin-top:14px;">
-          <button class="tp-btn" onclick="go('methodo')">Cliquer sur ce lien pour en savoir plus sur ma méthodologie de veille</button>
-        </div>
-      </div>
-    </div>
     <div class="projet-card">
       <div class="projet-header"><h3>Portfolio BTS SIO</h3><p>Création et développement — 2024/2026</p></div>
       <div class="projet-body">
         <p>Conception et développement d'un portfolio numérique pour présenter les réalisations professionnelles dans le cadre de l'épreuve E5 du BTS SIO.</p>
-        <div class="mini-title">Mots-clés</div>
-        <div class="project-tags"><span>Google Sites</span><span>HTML / CSS</span><span>JavaScript</span><span>Google Drive</span></div>
+        <div class="project-tags"><span class="ttag">Google Sites</span><span class="ttag">HTML / CSS</span><span class="ttag">JavaScript</span><span class="ttag">Google Drive</span></div>
       </div>
     </div>
   </div>
 </div>
 
-
-<!-- PAGE : METHODOLOGIE VEILLE -->
-<div class="page" id="page-methodo">
-  <div class="hero"><h1>Méthodologie de veille</h1><p>Comment je collecte et analyse l'information</p></div>
-  <div class="content">
-    <div class="methodo-card">
-      <h3>1) Google Alerte</h3>
-      <p>Pour ne manquer aucune actualité majeure, j'utilise Google Alerts. Cet outil m'envoie automatiquement par e-mail une sélection d'articles dès qu'une information pertinente est publiée sur le web.</p>
-      <ul>
-        <li><b>Mots-clés surveillés :</b> "Voiture autonome", "IA automobile", "Sécurité Tesla", "Lidar vs Vision".</li>
-        <li><b>Fréquence :</b> Réception quotidienne pour un suivi régulier.</li>
-      </ul>
-      <div class="methodo-images">
-        <img src="images/tachegrok01.png" alt="Google Alerts - configuration">
-      </div>
-    </div>
-    <div class="methodo-card">
-      <h3>2) Analyse et Synthèse par Intelligence Artificielle (Grok IA)</h3>
-      <p>En complément de ma veille classique, j'utilise Grok IA pour obtenir un condensé quotidien des dernières avancées technologiques directement sur mon smartphone et par e-mail.</p>
-      <ul>
-        <li><b>Fonctionnalité :</b> Utilisation du mode "Recherche en temps réel" de Grok pour scanner les publications d'experts, de constructeurs (Tesla, Waymo) et de chercheurs sur le réseau X.</li>
-        <li><b>Notification :</b> J'ai configuré une routine pour recevoir chaque matin un résumé des actualités les plus impactantes sur l'IA automobile.</li>
-        <li><b>Valeur ajoutée :</b> Grok me permet de filtrer le bruit des réseaux sociaux pour ne garder que les faits techniques et les annonces officielles, ce qui me fait gagner un temps précieux dans l'analyse des tendances.</li>
-      </ul>
-      <div class="methodo-images">
-        <img src="images/tachegrok3.png" alt="Grok IA - recherche en temps réel">
-        <img src="images/tachegrok1.png" alt="Grok IA - synthèse">
-        <img src="images/tachegrok2.png" alt="Grok IA - résumé quotidien">
-      </div>
-    </div>
-  </div>
-</div>
 <!-- PAGE : CONTACT -->
 <div class="page" id="page-tp">
   <div class="hero"><h1>TP réalisés en classe</h1><p>Consultation et téléchargement des travaux pratiques</p></div>
@@ -1854,7 +1798,16 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       <button class="tp-btn" onclick="go('projets')">Retour aux projets</button>
     </div>
     <div class="tp-list" id="tp-list">
-      
+      <div class="tp-doc">
+        <div class="tp-doc-header">
+          <div class="tp-doc-title">TP 28</div>
+          <div class="tp-doc-actions">
+            <a class="pdf-btn" href="pdf/tp%2028.pdf" download>Télécharger</a>
+            <a class="pdf-btn pdf-btn-ghost" href="pdf/tp%2028.pdf" target="_blank" rel="noopener">Ouvrir</a>
+          </div>
+        </div>
+        <iframe src="pdf/tp%2028.pdf" title="TP 28 (PDF)"></iframe>
+      </div>
 
       <div class="tp-doc">
         <div class="tp-doc-header">
@@ -1998,24 +1951,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         </div>
         <iframe src="pdf/Tp23-Cabiac-21-oct-2025.pdf" title="TP 23 (PDF)"></iframe>
       </div>
-      <div class="tp-doc">
-        <div class="tp-doc-header">
-          <div class="tp-doc-title">TP 28</div>
-          <div class="tp-doc-actions">
-            <a class="pdf-btn" href="pdf/tp%2028.pdf" download>Télécharger</a>
-            <a class="pdf-btn pdf-btn-ghost" href="pdf/tp%2028.pdf" target="_blank" rel="noopener">Ouvrir</a>
-          </div>
-        </div>
-        <iframe src="pdf/tp%2028.pdf" title="TP 28 (PDF)"></iframe>
-      </div>
-</div>
     </div>
   </div>
 </div>
 
-
-
-</div>
 <!-- PAGE : CONTACT -->
 <div class="page" id="page-contact">
   <div class="hero"><h1>Contact</h1></div>
@@ -2203,7 +2142,7 @@ function syncThemeFromOS() {
 }
 function initReveal() {
   const targets = document.querySelectorAll(
-    '.section-title, .table-container, .video-section, .skill, .projet-card, .tp-card, .tp-doc, .article-item, .level-box, .chrono-item, .tech-card, .tl-card, .cert-preview, .contact-form, .photo-grid img, .methodo-images img, .projet-pdf'
+    '.section-title, .table-container, .video-section, .skill, .projet-card, .tp-card, .tp-doc, .article-item, .level-box, .chrono-item, .tech-card, .tl-card, .cert-preview, .contact-form, .photo-grid img, .projet-pdf'
   );
   if (!('IntersectionObserver' in window)) {
     targets.forEach(el => el.classList.add('reveal','in-view'));
