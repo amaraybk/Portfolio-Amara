@@ -267,6 +267,17 @@ b,strong{color:var(--primary);}
 
 /* -- PROFIL ABOUT -- */
 .profil-about{display:flex;gap:32px;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;}
+.bts-overview{margin:18px 0 22px;padding:18px 20px;border-radius:14px;background:var(--light-gray);border:1px solid var(--border);color:var(--text);box-shadow:0 10px 24px rgba(0,0,0,0.08);}
+.bts-overview h2{margin:0 0 10px;font-size:1.2rem;letter-spacing:0.02em;text-transform:uppercase;color:var(--primary);}
+.bts-overview p{margin:0 0 10px;line-height:1.7;color:var(--text);}
+.bts-overview p:last-child{margin-bottom:0;}
+.bts-options-title{margin:14px 0 12px;font-weight:700;color:var(--primary);}
+.bts-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px;}
+.bts-option-card{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:16px 16px 18px;color:var(--text);box-shadow:0 6px 16px rgba(0,0,0,0.06);}
+.bts-option-card h3{margin:0 0 8px;font-size:1rem;color:var(--primary);display:flex;align-items:center;gap:8px;}
+.bts-option-card p{margin:0;font-size:0.9rem;line-height:1.6;color:var(--text);}
+.bts-icon{width:28px;height:28px;border-radius:8px;background:var(--light-gray);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bts-icon svg{width:16px;height:16px;fill:var(--primary);}
 .ptags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
 .ptag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:5px 14px;border:1.5px solid var(--primary);border-radius:20px;color:var(--primary);transition:var(--transition);}
 .ptag:hover{background:var(--primary);color:white;}
@@ -412,6 +423,12 @@ b,strong{color:var(--primary);}
 .skill-icon img{width:44px;height:44px;display:block;}
 .skill:hover .skill-icon img{filter:brightness(0) saturate(100%) invert(28%) sepia(96%) saturate(1547%) hue-rotate(200deg) brightness(92%) contrast(95%);}
 .skill:hover .skill-icon{color:var(--accent-blue);}
+.skill-icon.no-filter img{filter:none !important;}
+.skill:hover .skill-icon.no-filter img{filter:none !important;}
+.skill-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:16px;}
+.skill-card{background:var(--light-gray);border:1px solid var(--border);border-radius:16px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06);min-height:140px;}
+.skill-card img{width:64px;height:64px;object-fit:contain;display:block;}
+.skill-card span{font-weight:700;color:var(--primary);}
 .skill-name{font-size:1.1rem;font-weight:600;color:var(--text);white-space:nowrap;}
 .grille-cta{max-width:1040px;margin:18px auto 0;background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 6px 16px rgba(0,0,0,0.05);}
 .grille-cta p{margin:0;color:#334155;font-size:0.9rem;}
@@ -750,6 +767,22 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   <div class="hero"><h1>BTS SIO</h1><p>Services Informatiques aux Organisations — Session 2026</p></div>
   <div class="content">
     <p>Le <b>BTS SIO</b> apporte des compétences dans le support et la mise à disposition de services informatiques, ainsi qu'en <b>cybersécurité</b>. À la fin du premier semestre, il propose deux options (<b>SISR</b> et <b>SLAM</b>) qui délivrent chacune une compétence supplémentaire : l'<b>administration des systèmes et des réseaux (SISR)</b> ou la conception et le développement d'applications (SLAM).</p>
+    <div class="bts-overview">
+      <h2>Qu'est-ce que le BTS SIO ?</h2>
+      <p>Avant de me présenter et de présenter mon parcours scolaire, je souhaite expliquer ce qu'est le BTS SIO.</p>
+      <p>Le Brevet de Technicien Supérieur (BTS) aux Services Informatiques aux Organisations (SIO) est une filière d'étude post-bac, après un Bac Professionnel Systèmes Numériques par exemple. Dans ce BTS, on peut s'y former en matière de développement web ou application, en réseau et dans le domaine des bases de données.</p>
+      <div class="bts-options-title">Le BTS SIO possède deux options :</div>
+      <div class="bts-options">
+        <div class="bts-option-card">
+          <h3><span class="bts-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.7 15.9L3.8 11l4.9-4.9L7.3 4.7 1 11l6.3 6.3 1.4-1.4zM16.7 19.3L23 13l-6.3-6.3-1.4 1.4 4.9 4.9-4.9 4.9 1.4 1.4zM14.3 3L9.6 21h2.1L16.4 3h-2.1z"/></svg></span>Option SLAM</h3>
+          <p>L'option Solutions Logicielles et Applications Métiers (SLAM) du BTS SIO est un cursus intégral axé sur le développement et la gestion de solutions logicielles, formant les étudiants de manière efficace aux professions du développement informatique et leur permettant de répondre aux exigences spécifiques des entreprises en ce qui concerne les systèmes d'information.</p>
+        </div>
+        <div class="bts-option-card">
+          <h3><span class="bts-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm2 6h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a2 2 0 012-2zM7 7h2v2H7V7zm0 8h2v2H7v-2z"/></svg></span>Option SISR (présent actuellement)</h3>
+          <p>L'option Solutions d'Infrastructure Systèmes et Réseaux (SISR) du BTS SIO forme les étudiants pour devenir des experts qualifiés dans la gestion et la sécurisation des systèmes et réseaux, répondant ainsi aux besoins grandissants de fiabilité et d'efficacité des infrastructures informatiques au sein des organisations.</p>
+        </div>
+      </div>
+    </div>
     <div class="table-container">
       <table class="hours-table">
         <thead><tr>
@@ -787,12 +820,22 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   <div class="hero"><h1>Profil</h1></div>
   <div class="content">
     <p>Je m'appelle Amara, j'ai 21 ans et je suis en deuxième année de <b>BTS SIO</b> (Services Informatiques aux Organisations), option <b>SISR</b>, au <a href="https://fr.wikipedia.org/wiki/Louis_Armand_%28ing%C3%A9nieur%29" target="_blank" rel="noopener">lycée Louis-Armand</a> dans le 15e arrondissement de Paris. Avant cela, j'ai obtenu un baccalauréat technologique <b>STMG</b>, spécialité Mercatique.</p>
+    <div class="stage-map" style="margin-top:16px;">
+      <iframe
+        src="https://maps.google.com/maps?q=321+rue+Lecourbe+75015+Paris&output=embed&z=15"
+        allowfullscreen loading="lazy"
+        title="Lycée Louis-Armand, Paris 15e">
+      </iframe>
+      <div style="font-size:0.75rem;color:#888;margin-top:6px;text-align:center;">
+        <a href="https://maps.google.com/maps?q=321+rue+Lecourbe+75015+Paris" target="_blank" style="color:var(--accent-blue);text-decoration:none;">Adresse : 321 Rue Lecourbe, 75015 Paris</a>
+      </div>
+    </div>
     <div class="section-title" style="margin-top:32px;">Mon Parcours</div>
     <div class="timeline">
       <div class="tl-container tl-left tl-blue"><div class="tl-card"><div class="tl-header">Sept 2024 — Juil 2026</div><div class="tl-body"><h3>BTS SIO (option SISR)</h3><span class="tl-location"><a href="https://www.letudiant.fr/lycee/annuaire-des-lycees/fiche/lycee-polyvalent-louis-armand-75.html#presentation" target="_blank" rel="noopener">Lycée Louis Armand</a>, Paris 15e</span><p class="tl-details"><a href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-a-solutions-d-infrastructure-systemes-et-reseaux" target="_blank" rel="noopener">Solutions d'Infrastructure, Systèmes et Réseaux. Apprentissage de l'administration réseaux et services informatiques.</a></p></div></div></div>
       <div class="tl-container tl-right tl-pink"><div class="tl-card"><div class="tl-header">Sept 2022 — Juil 2024</div><div class="tl-body"><h3>Baccalauréat STMG</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Lycée Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Sciences et Technologies du Management et de la Gestion. Spécialité <a href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-stmg-sciences-et-technologies-du-management-et-de-la-gestion-enseignement-specifique-mercatique-marketing" target="_blank" rel="noopener">Marketing</a>.</p><span class="tl-mention">Obtenu avec Mention Bien</span></div></div></div>
       <div class="tl-container tl-left tl-yellow"><div class="tl-card"><div class="tl-header">Sept 2021 — Juil 2022</div><div class="tl-body"><h3>Première Générale</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Lycée Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Spécialités : Mathématiques, Physique-Chimie, SVT.</p></div></div></div>
-      <div class="tl-container tl-right tl-gray"><div class="tl-card"><div class="tl-header">Sept 2020 — Juil 2021</div><div class="tl-body"><h3>Seconde Générale</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Lycée Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Année de redoublement et consolidation des bases scientifiques et générales.</p></div></div></div>
+      <div class="tl-container tl-right tl-gray"><div class="tl-card"><div class="tl-header">Sept 2019 — Juil 2021</div><div class="tl-body"><h3>Seconde Générale</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Lycée Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Année de redoublement et consolidation des bases.</p></div></div></div>
       <div class="tl-container tl-left tl-teal"><div class="tl-card"><div class="tl-header">Sept 2015 — Juil 2019</div><div class="tl-body"><h3>Diplôme National du Brevet</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Collège Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Validation du socle commun de connaissances.</p><span class="tl-mention">Obtenu avec Mention Bien</span></div></div></div>
     </div>
     <div class="cta-row">
@@ -857,7 +900,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <button class="tab-btn active" data-target="def"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M10 3a7 7 0 015.65 11.13l4.11 4.11-1.41 1.41-4.11-4.11A7 7 0 1110 3zm0 2a5 5 0 100 10 5 5 0 000-10z"/></svg>Définition</button>
     <button class="tab-btn" data-target="chrono"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M13 3H11V11H3V13H11V21H13V13H21V11H13V3Z"/></svg>Chronologie</button>
     <button class="tab-btn" data-target="tech"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.35 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.97 19.05,5.05L16.56,6.05C16.04,5.65 15.48,5.32 14.87,5.07L14.49,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.51,2.42L9.13,5.07C8.52,5.32 7.96,5.65 7.44,6.05L4.95,5.05C4.73,4.97 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.35 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.95C7.96,18.35 8.52,18.68 9.13,18.93L9.51,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.49,21.58L14.87,18.93C15.48,18.68 16.04,18.35 16.56,17.95L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>Fonctionnement</button>
-    <button class="tab-btn" data-target="droit"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v1h5a1 1 0 010 2h-1.1l2.7 5.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0l-3.5-4.6a1 1 0 01-.1-1L13.6 6H10.4l1.8 3.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0L3.5 10.4a1 1 0 01-.1-1L6.1 6H5a1 1 0 010-2h5V3a1 1 0 011-1zm-4.3 8.5L6 7.2 4.3 10.5H7.7zm9.3 0l-1.7-3.3-1.7 3.3h3.4zM3 20h18a1 1 0 010 2H3a1 1 0 010-2z"/></svg>Droit &amp; Responsabilité</button>
+    <button class="tab-btn" data-target="droit"><svg style="width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v2h6a1 1 0 010 2h-1.2l2.4 4.8a1 1 0 01-.2 1.1l-2.6 2.6a1 1 0 01-1.4 0l-2.6-2.6a1 1 0 01-.2-1.1L15.7 7H8.3l2.5 4.8a1 1 0 01-.2 1.1l-2.6 2.6a1 1 0 01-1.4 0L4 12.9a1 1 0 01-.2-1.1L6.2 7H5a1 1 0 010-2h6V3a1 1 0 011-1zm-6 16h12a1 1 0 010 2H6a1 1 0 010-2z"/></svg>Droit &amp; Responsabilité</button>
     
   </div>
 
@@ -884,7 +927,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   </div></div></div>
 
   <div class="tab-panel" id="panel-droit"><div class="wrapper"><div class="section">
-    <h2 class="v-section-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v1h5a1 1 0 010 2h-1.1l2.7 5.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0l-3.5-4.6a1 1 0 01-.1-1L13.6 6H10.4l1.8 3.4a1 1 0 01-.1 1l-3.5 4.6a1 1 0 01-1.6 0L3.5 10.4a1 1 0 01-.1-1L6.1 6H5a1 1 0 010-2h5V3a1 1 0 011-1zm-4.3 8.5L6 7.2 4.3 10.5H7.7zm9.3 0l-1.7-3.3-1.7 3.3h3.4zM3 20h18a1 1 0 010 2H3a1 1 0 010-2z"/></svg>4. Droit et Niveaux de Responsabilité</h2>
+    <h2 class="v-section-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v2h6a1 1 0 010 2h-1.2l2.4 4.8a1 1 0 01-.2 1.1l-2.6 2.6a1 1 0 01-1.4 0l-2.6-2.6a1 1 0 01-.2-1.1L15.7 7H8.3l2.5 4.8a1 1 0 01-.2 1.1l-2.6 2.6a1 1 0 01-1.4 0L4 12.9a1 1 0 01-.2-1.1L6.2 7H5a1 1 0 010-2h6V3a1 1 0 011-1zm-6 16h12a1 1 0 010 2H6a1 1 0 010-2z"/></svg>4. Droit et Niveaux de Responsabilité</h2>
     <div class="level-box"><div class="level-header"><span>Niveau 1 &amp; 2 : Assistance</span><span class="who-drives">Humain Responsable</span></div><div class="level-body">Le conducteur doit rester attentif. L'ordinateur aide sur la vitesse ou le maintien de voie.</div></div>
     <div class="level-box"><div class="level-header"><span>Niveau 3 : Le Pivot Juridique</span><span class="who-drives">Responsabilité Partagée</span></div><div class="level-body"><b>Tournant majeur :</b> Sur autoroute, le conducteur peut lâcher le volant. En cas d'accident imputable au système, le <b>constructeur</b> peut être tenu responsable.</div></div>
     <div class="level-box"><div class="level-header"><span>Niveau 4 &amp; 5 : Robotisation Totale</span><span class="who-drives">Robot Responsable</span></div><div class="level-body">Le véhicule gère toutes les situations. À terme, pédales et volant disparaissent totalement.</div></div>
@@ -1043,10 +1086,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       </div>
 
       <div class="article-item">
-        <div class="flux-meta">6 Janvier 2026 <span class="source-label">Nvidia News</span></div>
-        <h3>Nvidia dévoile des modèles pour faire "penser" l'IA</h3>
-        <p class="flux-summary">Nouveaux frameworks d'IA générative permettant au véhicule d'anticiper les intentions des autres usagers de la route.</p>
-        <div class="link-wrapper"><a href="#" class="read-more" target="_blank">Consulter l'article &rarr;</a></div>
+        <div class="flux-meta">6 Janvier 2026 <span class="source-label">Le Monde</span></div>
+        <h3>Au CES de Las Vegas, Nvidia dévoile des modèles d'IA pour faire "penser" les véhicules autonomes</h3>
+        <p class="flux-summary">Le Monde (cité dans couverture CES)</p>
+        <div class="link-wrapper"><a href="https://www.lemonde.fr/economie/article/2026/01/07/pour-le-patron-de-nvidia-la-voiture-autonome-s-annonce-comme-le-grand-marche-de-la-robotique-de-demain_6660865_3234.html" class="read-more" target="_blank">Consulter l'article &rarr;</a></div>
       </div>
 
       <div class="article-item">
@@ -1071,7 +1114,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       </div>
 
       <div class="article-item">
-        <div class="flux-meta">Février 2026 <span class="source-label">BFMTV</span></div>
+        <div class="flux-meta">8 Février 2026 <span class="source-label">BFMTV</span></div>
         <h3>CES 2026 : L'intelligence artificielle "physique"</h3>
         <p class="flux-summary">Le passage à une IA qui comprend les lois de la physique pour une conduite plus fluide et moins saccadée.</p>
         <div class="link-wrapper"><a href="https://www.bfmtv.com/tech/intelligence-artificielle/ces-2026-la-conduite-autonome-compte-sur-l-intelligence-artificielle-physique-pour-convaincre-et-preparer-le-terrain_AD-202601080293.html" class="read-more" target="_blank">Consulter l'article &rarr;</a></div>
@@ -1105,15 +1148,23 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div class="link-wrapper"><a href="https://www.lefigaro.fr/vie-professionnelle/dans-cette-grande-entreprise-les-salaries-ont-elabore-une-ia-pour-predire-les-reactions-du-patron-20260302" class="read-more" target="_blank">Consulter l'article &rarr;</a></div>
       </div>
 
-      <div class="article-item" style="border-left:5px solid #2563eb;">
-        <div class="flux-meta">Mars 2026 <span class="source-label">Actualité</span></div>
-        <h3>Synthèse de Veille : L'IA au cœur du transport</h3>
-        <p class="flux-summary">Bilan de la veille montrant la transition du matériel (voiture) vers le logiciel (système d'IA) comme valeur ajoutée principale.</p>
+      <div class="article-item">
+        <div class="flux-meta">12 Mars 2026 <span class="source-label">Le Figaro</span></div>
+        <h3>Robotaxis : Uber prévoit un essai à Tokyo avec Nissan et le britannique Wayve « d'ici fin 2026 »</h3>
+        <p class="flux-summary">Essai de robotaxis à Tokyo avec Nissan et Wayve annoncé pour fin 2026.</p>
+        <div class="link-wrapper"><a href="https://www.lefigaro.fr/secteur/high-tech/robotaxis-uber-prevoit-un-essai-a-tokyo-avec-nissan-et-le-britannique-wayve-d-ici-fin-2026-20260312" class="read-more" target="_blank">Consulter l'article &rarr;</a></div>
+      </div>
+
+      <div class="article-item" data-pin="bottom" style="border-left:5px solid #2563eb;">
+        <div class="flux-meta">Mars 2026 <span class="source-label">Synthèse</span></div>
+        <h3>Synthèse : L'Intelligence Artificielle et les Véhicules Autonomes (sept. 2024 – mars 2026)</h3>
+        <p class="flux-summary">Entre 2024 et 2026, l’IA a transformé les véhicules autonomes d’un concept expérimental en réalité commerciale massive. Nvidia (Alpamayo, partenariats Uber/Nissan), Wayve (valorisation &gt; 8 Md$) et les chinois (Baidu, Pony.ai, WeRide) dominent avec des flottes niveau 4 déployées à grande échelle. La Chine mène en volume et rentabilité ; les États-Unis (Waymo) en maturité technologique ; l’Europe rattrape via essais pilotes (Londres, Tokyo, France autoroute).</p>
+        <p class="flux-summary">Clés : IA physique raisonnante, multimodalité, simulation avancée. Enjeux persistants : sécurité, responsabilité, régulation prudente en Europe. 2026 marque l’année charnière des robotaxis urbains généralisés.</p>
         <div class="link-wrapper"><span class="read-more">Clôture de la période de veille</span></div>
       </div>
     </div>
 
-    <div class="flux-footer">Veille Technologique BTS SIO - Mis à jour le 02/03/2026</div>
+    <div class="flux-footer">Veille Technologique BTS SIO - Mis à jour le 18/03/2026</div>
   </div>
 </div>
 
@@ -1128,9 +1179,11 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <div class="skill-category">
       <div class="category-label">Bureautique &amp; Création</div>
       <div class="skills-row">
-        <div class="skill"><span class="skill-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tabler-icons_file-spreadsheet.svg" alt="Excel"></span><span class="skill-name">Excel</span></div>
-        <div class="skill"><span class="skill-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tabler-icons_file-text.svg" alt="Word et PowerPoint"></span><span class="skill-name">Word et PowerPoint</span></div>
-        <div class="skill"><span class="skill-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tabler-icons_palette.svg" alt="Capcut et Canva"></span><span class="skill-name">Capcut et Canva</span></div>
+        <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg" alt="Excel"></span><span class="skill-name">Excel</span></div>
+        <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftword.svg" alt="Word"></span><span class="skill-name">Word</span></div>
+        <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftpowerpoint.svg" alt="PowerPoint"></span><span class="skill-name">PowerPoint</span></div>
+        <div class="skill"><span class="skill-icon no-filter"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg" alt="CapCut"></span><span class="skill-name">CapCut</span></div>
+        <div class="skill"><span class="skill-icon no-filter"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" alt="Canva"></span><span class="skill-name">Canva</span></div>
       </div>
     </div>
     <div class="skill-category">
@@ -1146,6 +1199,23 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       <div class="skills-row">
         <div class="skill"><span class="skill-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tabler-icons_cube-unfolded.svg" alt="Oracle VirtualBox et VMware"></span><span class="skill-name">Oracle VirtualBox et VMware</span></div>
         <div class="skill"><span class="skill-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tabler-icons_user-cog.svg" alt="Active Directory"></span><span class="skill-name">Active Directory</span></div>
+        <div class="skill"><span class="skill-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Logo_Proxmox.svg" alt="Proxmox"></span><span class="skill-name">Proxmox</span></div>
+        <div class="skill"><span class="skill-icon no-filter"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PuTTY_Icon.svg" alt="PuTTY"></span><span class="skill-name">PuTTY</span></div>
+      </div>
+      <div class="category-label" style="margin-top:16px;">Laguages</div>
+      <div class="skill-card-grid">
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+          <span>Python</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+          <span>MySQL</span>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+          <span>HTML</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1484,6 +1554,17 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                 </tr>
 
                 <tr>
+                    <td class="td-realisation">Création page LinkedIn</td>
+                    <td class="td-periode">09/2024</td>
+                    <td class="td-check"></td>
+                    <td class="td-check"></td>
+                    <td class="td-check"><span class="check-mark">&#10003;</span></td>
+                    <td class="td-check"></td>
+                    <td class="td-check"></td>
+                    <td class="td-check"></td>
+                </tr>
+
+                <tr>
                     <td class="td-realisation">Mise en place d'une veille technologique (IA)</td>
                     <td class="td-periode">2024<br>&rarr; 2026</td>
                     <td class="td-check"></td>
@@ -1647,6 +1728,11 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div class="mobile-card-title">Création du Portfolio</div>
         <div class="mobile-card-periode">11/2024 &rarr; 07/2026</div>
         <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
+    </div>
+    <div class="mobile-card">
+        <div class="mobile-card-title">Création page LinkedIn</div>
+        <div class="mobile-card-periode">09/2024</div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Mise en place d'une veille technologique (IA)</div>
@@ -1825,7 +1911,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       <div class="projet-body">
         <p>Conception et développement d'un portfolio numérique pour présenter les réalisations professionnelles dans le cadre de l'épreuve E5 du BTS SIO.</p>
         <div class="mini-title">Mots-clés</div>
-        <div class="project-tags"><span>Google Sites</span><span>HTML</span><span>GitHub</span><span>Google Drive</span></div>
+        <div class="project-tags"><span>Google Sites</span><span>HTML</span><span>GitHub</span><span>Google Drive</span><span>CMS</span></div>
       </div>
     </div>
   </div>
@@ -2351,7 +2437,9 @@ function updateVeille() {
     const text = item.textContent.toLowerCase();
     return !q || text.includes(q);
   });
-  filtered.sort((a,b) => {
+  const filteredPinned = filtered.filter(item => item.dataset.pin === 'bottom');
+  const filteredNormal = filtered.filter(item => item.dataset.pin !== 'bottom');
+  filteredNormal.sort((a,b) => {
     const metaA = a.querySelector('.flux-meta');
     const metaB = b.querySelector('.flux-meta');
     const ta = metaA ? (metaA.childNodes[0]?.textContent || metaA.textContent) : '';
@@ -2361,7 +2449,8 @@ function updateVeille() {
     return dir === 'asc' ? da - db : db - da;
   });
   veilleList.innerHTML = '';
-  filtered.forEach(it => veilleList.appendChild(it));
+  filteredNormal.forEach(it => veilleList.appendChild(it));
+  filteredPinned.forEach(it => veilleList.appendChild(it));
 }
 if (veilleSearch) veilleSearch.addEventListener('input', updateVeille);
 if (veilleSort) veilleSort.addEventListener('change', updateVeille);
