@@ -1047,7 +1047,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
 
   
   <div class="flux-container">
-    <h2 class="flux-title">Flux de Veille : Septembre 2024 — Mars 2026</h2>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+      <h2 class="flux-title" style="margin:40px 0 18px;">Flux de Veille : Septembre 2024 — Mars 2026</h2>
+      <button class="tp-btn" onclick="go('methodo')">Méthodologie de veille</button>
+    </div>
     <div class="veille-controls">
       <input id="veille-search" class="veille-input" type="search" placeholder="Rechercher un article (mot-clé, source...)">
       <select id="veille-sort" class="veille-select">
