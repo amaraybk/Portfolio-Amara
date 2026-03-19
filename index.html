@@ -531,8 +531,33 @@ td.td-check{text-align:center;vertical-align:middle;}
 .methodo-card{background:var(--light-gray);border:1px solid var(--border);border-radius:12px;padding:18px;margin-top:16px;}
 .methodo-card h3{margin:0 0 8px;font-size:1rem;color:var(--primary);}
 .methodo-card ul{margin:8px 0 0 18px;}
-.projet-pdf{margin-top:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
-.projet-pdf iframe{width:100%;height:540px;border:0;display:block;}
+    .projet-pdf{margin-top:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
+    .projet-pdf iframe{width:100%;height:540px;border:0;display:block;}
+    .pdf-frame{position:relative;}
+    .pdf-guard iframe{pointer-events:none;}
+    .pdf-guard.active iframe{pointer-events:auto;}
+    .pdf-guard-overlay{
+        position:absolute;
+        inset:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:rgba(15,23,42,0.25);
+        backdrop-filter:blur(1px);
+        cursor:pointer;
+        text-align:center;
+        padding:10px;
+    }
+    .pdf-guard-overlay span{
+        background:#0f172a;
+        color:#fff;
+        font-size:0.78rem;
+        font-weight:700;
+        padding:8px 12px;
+        border-radius:8px;
+        letter-spacing:0.02em;
+    }
+    .pdf-guard.active .pdf-guard-overlay{display:none;}
 .pdf-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:12px 14px;background:#f8fafc;border-top:1px solid var(--border);}
 .pdf-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;}
 .pdf-btn:hover{background:#222;}
@@ -742,20 +767,22 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <button class="nav-link" onclick="go('profil')" data-p="profil">Profil</button>
     <div class="nav-item">
       <div class="nav-link-wrap">
-        <button class="nav-link" onclick="go('stages')" data-p="stages">Stages</button>
-        <button class="nav-toggle" aria-label="Afficher les sous-pages stages" onclick="toggleDropdown(event, this)">&#9662;</button>
+        <button class="nav-link" onclick="go('stages')" data-p="stages">Immersion professionnelle</button>
+        <button class="nav-toggle" aria-label="Afficher les sous-pages immersion professionnelle" onclick="toggleDropdown(event, this)">&#9662;</button>
       </div>
       <div class="nav-dropdown">
+        <button onclick="go('stages')">Stages</button>
         <button onclick="go('duoday')">DuoDay</button>
       </div>
     </div>
     <button class="nav-link" onclick="go('veille')" data-p="veille">Veille informatique</button>
     <div class="nav-item">
       <div class="nav-link-wrap">
-        <button class="nav-link" onclick="go('competences')" data-p="competences">compétence</button>
-        <button class="nav-toggle" aria-label="Afficher les sous-pages compétences" onclick="toggleDropdown(event, this)">&#9662;</button>
+        <button class="nav-link" onclick="go('competences')" data-p="competences">Référentiel de compétences</button>
+        <button class="nav-toggle" aria-label="Afficher les sous-pages référentiel de compétences" onclick="toggleDropdown(event, this)">&#9662;</button>
       </div>
       <div class="nav-dropdown">
+        <button onclick="go('competences')">Compétences</button>
         <button onclick="go('grille')">Grille de compétences</button>
       </div>
     </div>
@@ -855,7 +882,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       <div class="tl-container tl-left tl-teal"><div class="tl-card"><div class="tl-header">Sept 2015 — Juil 2019</div><div class="tl-body"><h3>Diplôme National du Brevet</h3><span class="tl-location"><a href="https://fr.wikipedia.org/wiki/Lyc%C3%A9e_H%C3%A9l%C3%A8ne-Boucher" target="_blank" rel="noopener">Collège Hélène Boucher</a>, Paris 20e</span><p class="tl-details">Validation du socle commun de connaissances.</p><span class="tl-mention">Obtenu avec Mention Bien</span></div></div></div>
     </div>
     <div class="cta-row">
-      <a class="btn btn-filled" href="https://drive.google.com/uc?export=download&id=1lPpwjWpkjVQ4LiqVYrZKLDqZW_RfPoTk" download><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h5.66V9h3.84L12 2z"/></svg>Télécharger mon CV</a>
+      <a class="btn btn-filled" href="documents/CV_2026-03-19_Amara _YEBKA-2.pdf" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h5.66V9h3.84L12 2z"/></svg>Télécharger mon CV</a>
       <a class="btn btn-outline" href="https://www.linkedin.com/in/amarayebka" target="_blank">LinkedIn</a>
     </div>
   </div>
@@ -877,6 +904,10 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
           <li><div class="dot"></div><span><b>Pascal Moussier</b>, Professeur en Informatique, Infrastructure et Réseau</span></li>
         </ul>
         <p style="margin-top:16px;">Le premier stage s'est déroulé du <b>19 mai 2025</b> au <b>4 juillet 2025</b>, puis le second du <b>15 décembre 2025</b> au <b>8 février 2026</b>.</p>
+        <div class="pdf-actions" style="margin-top:12px;">
+          <a class="pdf-btn" href="documents/2026_03_18_SF_INBOX_588_16e563_Convention BTS SIO1 2024-25-P2 - AMARA YEBKA.pdf" target="_blank" rel="noopener">Télécharger l'attestation de stage (1ère année)</a>
+          <a class="pdf-btn" href="documents/2026_03_18_SF_INBOX_588_5f65f1_Convention BTS SIO2 2024-26-P2 - AMARA YEBKA (1).pdf" target="_blank" rel="noopener">Télécharger l'attestation de stage (2ème année)</a>
+        </div>
       </div>
       <div class="stage-map">
         <iframe
@@ -942,7 +973,8 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
           <a href="https://maps.google.com/maps?q=20+avenue+de+S%C3%A9gur+75007+Paris" target="_blank" style="color:var(--accent-blue);text-decoration:none;">Adresse : 20 Avenue de Ségur, 75007 Paris</a>
         </div>
       </div>
-    </div>\n\n    <div class="stage-intro">
+    </div>
+    <div class="stage-intro">
       <div class="duo-card">
         <h2 class="duo-title">DuoDay — Chargé de mission réseaux et équipements télécoms</h2>
         <p class="duo-subtitle">Ministère de l’Économie, des Finances et de la Souveraineté industrielle et numérique · Stage</p>
@@ -1292,12 +1324,13 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   <div style="padding:40px 24px 20px;">
     <div class="skill-category">
       <div class="category-label">Bureautique &amp; Création</div>
-      <div class="skills-row">
+        <div class="skills-row">
         <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg" alt="Excel"></span><span class="skill-name">Excel</span></div>
         <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftword.svg" alt="Word"></span><span class="skill-name">Word</span></div>
         <div class="skill"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftpowerpoint.svg" alt="PowerPoint"></span><span class="skill-name">PowerPoint</span></div>
         <div class="skill"><span class="skill-icon no-filter"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg" alt="CapCut"></span><span class="skill-name">CapCut</span></div>
         <div class="skill"><span class="skill-icon no-filter"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" alt="Canva"></span><span class="skill-name">Canva</span></div>
+        <div class="skill"><span class="skill-icon no-filter"><img src="https://img.icons8.com/color/96/google-sites.png" alt="Google Sites"></span><span class="skill-name">Google Sites</span></div>
       </div>
     </div>
     <div class="skill-category">
@@ -1536,6 +1569,13 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         font-family: "Segoe UI Symbol","Arial Unicode MS",Arial,sans-serif;
         line-height: 1;
     }
+    .check-note {
+        margin-left: 4px;
+        font-weight: 800;
+        color: var(--primary);
+        font-size: 0.85rem;
+        vertical-align: middle;
+    }
 
     /* -- MOBILE CARDS -- */
     .mobile-section-label {
@@ -1605,7 +1645,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     </div>
 
     <!-- -- DOWNLOAD -- -->
-    <a class="dl-btn" href="https://docs.google.com/spreadsheets/d/1SyYDubY_lsMn595H3wFx-6fUqPP2ZkaI/export?format=xlsx" download="Grille_de_competence_BTS_SIO_2026.xlsx">
+    <a class="dl-btn" href="excel/Grille de compétence  - BTS SIO 2026 (4).xlsx" download="Grille de compétence  - BTS SIO 2026 (4).xlsx">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h5.66V9h3.84L12 2z"/></svg>
         Télécharger la grille Excel (.xlsx)
     </a>
@@ -1632,12 +1672,12 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                     <th colspan="6">Compétences mises en œuvre</th>
                 </tr>
                 <tr class="subheader">
-                    <th title="Gérer le patrimoine informatique">C1<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Gérer le patrimoine</span></th>
-                    <th title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Répondre aux incidents</span></th>
-                    <th title="Développer la présence en ligne de l'organisation">C3<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Présence en ligne</span></th>
-                    <th title="Travailler en mode projet">C4<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Mode projet</span></th>
-                    <th title="Mettre à disposition des utilisateurs un service informatique">C5<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Mise à disposition</span></th>
-                    <th title="Organiser son développement professionnel">C6<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Dév. professionnel</span></th>
+                    <th title="Gérer le patrimoine informatique">C1<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Gérer le patrimoine informatique</span></th>
+                    <th title="Répondre aux incidents et aux demandes d’assistance et d’évolution">C2<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Répondre aux incidents et aux demandes d’assistance et d’évolution</span></th>
+                    <th title="Développer la présence en ligne de l’organisation">C3<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Développer la présence en ligne de l’organisation</span></th>
+                    <th title="Travailler en mode projet">C4<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Travailler en mode projet</span></th>
+                    <th title="Mettre à disposition des utilisateurs un service informatique">C5<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Mettre à disposition des utilisateurs un service informatique</span></th>
+                    <th title="Organiser son développement professionnel">C6<span style="display:block;font-size:0.65rem;opacity:0.8;margin-top:2px;">Organiser son développement professionnel</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -1661,7 +1701,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                     <td class="td-periode">11/2024<br>&rarr; 07/2026</td>
                     <td class="td-check"></td>
                     <td class="td-check"></td>
-                    <td class="td-check"><span class="check-mark">&#10003;</span></td>
+                    <td class="td-check"><span class="check-mark">&#10003;</span><span class="check-note">*</span></td>
                     <td class="td-check"></td>
                     <td class="td-check"></td>
                     <td class="td-check"><span class="check-mark">&#10003;</span></td>
@@ -1672,7 +1712,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
                     <td class="td-periode">09/2024</td>
                     <td class="td-check"></td>
                     <td class="td-check"></td>
-                    <td class="td-check"><span class="check-mark">&#10003;</span></td>
+                    <td class="td-check"><span class="check-mark">&#10003;</span><span class="check-note">*</span></td>
                     <td class="td-check"></td>
                     <td class="td-check"></td>
                     <td class="td-check"></td>
@@ -1841,12 +1881,12 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
     <div class="mobile-card">
         <div class="mobile-card-title">Création du Portfolio</div>
         <div class="mobile-card-periode">11/2024 &rarr; 07/2026</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3*</a><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C6</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Création page LinkedIn</div>
         <div class="mobile-card-periode">09/2024</div>
-        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3</a></div>
+        <div class="mobile-chips"><a class="chip" href="#grille-legend" onclick="goToLegend(event)">C3*</a></div>
     </div>
     <div class="mobile-card">
         <div class="mobile-card-title">Mise en place d'une veille technologique (IA)</div>
@@ -1924,27 +1964,27 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:10px;">
         <div id="legend-c1" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C1 — Gérer le patrimoine informatique</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Recenser les ressources · Exploiter les référentiels · Gérer habilitations · Assurer la continuité · Sauvegardes</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Recenser et identifier les ressources numériques · Exploiter des référentiels, normes et standards adoptés par le prestataire informatique · Mettre en place et vérifier les niveaux d’habilitation associés à un service · Vérifier les conditions de la continuité d’un service informatique · Gérer des sauvegardes · Vérifier le respect des règles d’utilisation des ressources numériques</div>
             </div>
         <div id="legend-c2" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
-                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C2 — Répondre aux incidents et demandes</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Collecter et orienter · Services réseau / système / applicatifs · Traiter les demandes</div>
+                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C2 — Répondre aux incidents et aux demandes d’assistance et d’évolution</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Collecter, suivre et orienter des demandes · Traiter des demandes concernant les services réseau et système, applicatifs · Traiter des demandes concernant les applications</div>
             </div>
         <div id="legend-c3" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
-                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C3 — Développer la présence en ligne</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Valoriser l'image · Référencer les services · Faire évoluer un site Web</div>
+                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C3 — Développer la présence en ligne de l’organisation</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Participer à la valorisation de l’image de l’organisation sur les médias numériques en tenant compte du cadre juridique et des enjeux économiques · Référencer les services en ligne de l’organisation et mesurer leur visibilité · Participer à l’évolution d’un site Web exploitant les données de l’organisation</div>
             </div>
         <div id="legend-c4" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C4 — Travailler en mode projet</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Analyser objectifs · Planifier · Évaluer indicateurs et écarts</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Analyser les objectifs et les modalités d’organisation d’un projet · Planifier les activités · Évaluer les indicateurs de suivi d’un projet et analyser les écarts</div>
             </div>
         <div id="legend-c5" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
-                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C5 — Mettre à disposition un service</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Tests d'intégration · Déployer · Accompagner les utilisateurs</div>
+                <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C5 — Mettre à disposition des utilisateurs un service informatique</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Réaliser les tests d’intégration et d’acceptation d’un service · Déployer un service · Accompagner les utilisateurs dans la mise en place d’un service</div>
             </div>
         <div id="legend-c6" style="background:var(--light-gray); border-radius:8px; padding:12px 14px; border:1px solid #e2e8f0;">
                 <div style="font-weight:700; font-size:0.78rem; margin-bottom:6px; color:var(--primary);">C6 — Organiser son développement professionnel</div>
-                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Veille informationnelle · Identité professionnelle · Projet professionnel</div>
+                <div style="font-size:0.72rem; color:#666; line-height:1.6;">Mettre en place son environnement d’apprentissage personnel · Mettre en œuvre des outils et stratégies de veille informationnelle · Gérer son identité professionnelle · Développer son projet professionnel</div>
             </div>
         </div>
     </div>
@@ -1953,6 +1993,8 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         <div class="legend-item"><div class="legend-box">&#10003;</div><span>Compétence mobilisée lors de la réalisation</span></div>
         <span style="color:#cbd5e0;">|</span>
         <span>Survolez les en-têtes <strong>C1–C6</strong> pour afficher le libellé complet</span>
+        <span style="color:#cbd5e0;">|</span>
+        <span><strong>*</strong> C3 : présence en ligne personnelle (portfolio / LinkedIn)</span>
     </div>
 
 </div>
@@ -1974,8 +2016,13 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
         </ul>
         <div class="mini-title">Mots-clés</div>
         <div class="project-tags"><span>VLAN</span><span>DHCP</span><span>DNS</span><span>Active Directory</span><span>Virtualisation</span><span>Messagerie</span></div>
-        <div class="projet-pdf" aria-label="Rapport PDF du projet GSB">
-          <iframe src="pdf/GSB-Organisation.pdf" title="GSB - Organisation (PDF)"></iframe>
+        <div class="projet-pdf pdf-guard" aria-label="Rapport PDF du projet GSB">
+          <div class="pdf-frame">
+            <iframe src="pdf/GSB-Organisation.pdf" title="GSB - Organisation (PDF)"></iframe>
+            <div class="pdf-guard-overlay" role="button" aria-label="Activer le scroll du PDF">
+              <span>Cliquez pour activer le scroll du PDF</span>
+            </div>
+          </div>
           <div class="pdf-actions">
             <a class="pdf-btn" href="https://drive.google.com/uc?export=download&id=1zHPZrX_X-IWT8XBDIj-R9078jXR1VIjr" download>Télécharger le PDF (10 pages)</a>
             <a class="pdf-btn pdf-btn-ghost" href="pdf/GSB-Organisation.pdf" target="_blank" rel="noopener">Consulter</a>
@@ -2025,7 +2072,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
       <div class="projet-body">
         <p>Conception et développement d'un portfolio numérique pour présenter les réalisations professionnelles dans le cadre de l'épreuve E5 du BTS SIO.</p>
         <div class="mini-title">Mots-clés</div>
-        <div class="project-tags"><span>Google Sites</span><span>HTML</span><span>GitHub</span><span>Google Drive</span><span>CMS</span></div>
+        <div class="project-tags"><span>Codex AI</span><span>Claude AI</span><span>HTML</span><span>GitHub</span><span>Google Drive</span><span>CMS</span></div>
       </div>
     </div>
   </div>
@@ -2276,7 +2323,7 @@ footer p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0 0 20px;}
   <p>© 2026 Amara Yebka | Réalisé dans le cadre du BTS SIO</p>
   <div class="footer-links">
     <button class="footer-link" onclick="go('contact')">contactez moi</button>
-    <a class="footer-link" href="https://drive.google.com/uc?export=download&id=1lPpwjWpkjVQ4LiqVYrZKLDqZW_RfPoTk" download>Télécharger mon CV</a>
+    <a class="footer-link" href="documents/CV_2026-03-19_Amara _YEBKA-2.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
     <a class="footer-link li-btn" href="https://www.linkedin.com/in/amarayebka" target="_blank">
       <div class="li-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -2614,6 +2661,7 @@ window.addEventListener('load', () => {
   go(id || 'bts', false, true);
   window.scrollTo(0,0);
   bindCheckLegend();
+  bindPdfGuards();
   initReveal();
   syncThemeFromOS();
 });
@@ -2633,6 +2681,21 @@ function bindCheckLegend() {
       const map = { 2: 'C1', 3: 'C2', 4: 'C3', 5: 'C4', 6: 'C5', 7: 'C6' };
       const code = map[idx];
       if (code) { goToLegend(e, code); }
+    });
+  });
+}
+function bindPdfGuards() {
+  document.querySelectorAll('.pdf-guard').forEach(card => {
+    const overlay = card.querySelector('.pdf-guard-overlay');
+    if (!overlay) return;
+    overlay.addEventListener('click', () => {
+      card.classList.add('active');
+    });
+    overlay.addEventListener('touchstart', () => {
+      card.classList.add('active');
+    }, { passive: true });
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('active');
     });
   });
 }
